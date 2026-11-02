@@ -150,7 +150,7 @@ LOG_LEVEL=INFO
 │  │  │                        │  │                            │ │ │
 │  │  │ • Scans for YES+NO <$1 │  │ • Monitors time to close   │ │ │
 │  │  │ • Builds paired pos    │  │ • Buys 95%+ confidence     │ │ │
-│  │  │ • Locks guaranteed $   │  │ • Max 98¢ entry price      │ │ │
+│  │  │ • Locks the spread $   │  │ • Max 98¢ entry price      │ │ │
 │  │  └────────────────────────┘  └────────────────────────────┘ │ │
 │  │                                                              │ │
 │  └──────────────────────────────────────────────────────────────┘ │
@@ -181,7 +181,7 @@ LOG_LEVEL=INFO
 
 ### Oscillating Arbitrage
 
-The market oscillates - prices fluctuate throughout the day. When combined YES+NO cost drops below $1.00, we lock in guaranteed profit.
+The market oscillates - prices fluctuate throughout the day. When combined YES+NO cost drops below $1.00, we lock in the spread if both legs fill.
 
 **Entry Criteria:**
 - Combined cost (YES + NO) < $0.98
@@ -190,7 +190,7 @@ The market oscillates - prices fluctuate throughout the day. When combined YES+N
 
 **Position Management:**
 - Build paired positions over time
-- Track guaranteed shares (min of YES/NO qty)
+- Track hedged shares (min of YES/NO qty)
 - Calculate locked profit per pair
 
 **Exit:**
