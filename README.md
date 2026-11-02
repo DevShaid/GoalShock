@@ -1,13 +1,13 @@
 # GoalShock v1.1.2 ( switched to closed-source )
 
-a autonomous trading system for Polymarket prediction markets. Features dual-alpha strategies: **Oscillating Arbitrage** and **Late-Stage Compression** - replicating the success of top traders with 99.7% hit rates.
+An experimental trading bot for Polymarket sports markets, built to test two strategies: **Oscillating Arbitrage** and **Late-Stage Compression**. It isn't proven profitable after fees, slippage and partial fills.
 
 
 ##  Overview
 
-GoalShock v1.1.2 is an **elite-level autonomous trading engine** designed for sports prediction markets:
+GoalShock v1.1.2 is an autonomous trading bot for sports prediction markets:
 
-- **Oscillating Arbitrage** - Buy YES+NO when combined cost < $1.00 for guaranteed profit
+- **Oscillating Arbitrage** - Buy YES+NO when combined cost < $1.00. The spread only locks in if both legs fill before prices move.
 - **Late-Stage Compression** - Clip near-certain outcomes seconds before resolution
 - **WebSocket-First Architecture** - Real-time data streaming, no polling
 - **Sports Market Focus** - Fast resolution, no disputes
@@ -18,15 +18,13 @@ GoalShock v1.1.2 is an **elite-level autonomous trading engine** designed for sp
 ```
 When YES @ $0.45 and NO @ $0.50:
   Combined cost = $0.95
-  Guaranteed payout = $1.00
-  Locked profit = $0.05 per share (5.26% return)
+  Payout if both legs fill = $1.00
+  Spread = $0.05 per share before fees
 ```
 
 **Alpha #2: Late-Stage Compression**
 ```
-Replicating trader 0xa676582530fb1a63502d5f5f5db9fb8d1449e38b:
-  - 4,450+ executions
-  - 99.7% hit rate
+Modeled on the trade pattern of wallet 0xa676582530fb1a63502d5f5f5db9fb8d1449e38b:
   - Zero spike pattern (steady accumulation)
   - Buy at 95%+ confidence, 10-300 seconds before close
 ```
@@ -121,7 +119,7 @@ LOG_LEVEL=INFO
 **1. Polymarket CLOB API**
 - Create account at https://polymarket.com
 - Generate API credentials in account settings
-- Export wallet private key for order signing
+- Order signing needs a wallet private key. Use a dedicated wallet with only what you're willing to lose.
 
 **2. API-Football (Optional)**
 - Sign up at https://rapidapi.com
