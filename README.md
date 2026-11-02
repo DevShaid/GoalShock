@@ -1,4 +1,4 @@
-# GoalShock v1.1.2 ( switched to closed-source )
+# GoalShock v1.1.2 ( project for omniverse quant )
 
 An experimental trading bot for Polymarket sports markets, built to test two strategies: **Oscillating Arbitrage** and **Late-Stage Compression**. It isn't proven profitable after fees, slippage and partial fills.
 
